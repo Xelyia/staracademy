@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carnet Star Academy 2026—2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F4FF; --card:#FFFFFF; --soft:#F1ECFF; --ink:#2A2350; --grey:#7B7497;
+  --line:#D6CCF6; --border:#E2DAFB;
+  --violet:#5B2EFF; --pink:#E8339E; --cyan:#0FAFCB; --orange:#F2851A; --coral:#F25A45; --green:#1FAE6B; --gold:#D99600;
+  --txt:"Comic Neue","Comic Sans MS","Chalkboard SE",cursive,sans-serif;
+  --num:"Poppins","Avenir Next","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#17122E; --card:#221B42; --soft:#2B2355; --ink:#F1EDFF; --grey:#A79FC9; --line:#4A3F80; --border:#3A3170;
+  --violet:#8C6BFF; --pink:#FF5DB8; --cyan:#3FD3EA; --orange:#FFA24D; --coral:#FF7A66; --green:#3FD18B; --gold:#FFC23D;
+}}
+:root[data-theme="dark"]{
+  --bg:#17122E; --card:#221B42; --soft:#2B2355; --ink:#F1EDFF; --grey:#A79FC9; --line:#4A3F80; --border:#3A3170;
+  --violet:#8C6BFF; --pink:#FF5DB8; --cyan:#3FD3EA; --orange:#FFA24D; --coral:#FF7A66; --green:#3FD18B; --gold:#FFC23D;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--txt);font-size:18px;line-height:1.4;-webkit-text-size-adjust:100%}
+.num,input.num,input[type=date],.rank,.recap,.recap *{font-family:var(--num)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--violet);color:#fff;padding:10px 16px 0;box-shadow:0 4px 16px rgba(40,10,120,.18)}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.2px}
+.brand .season{font-family:var(--num);font-size:13px;opacity:.85}
+.status{margin-left:auto;font-size:14px;background:rgba(255,255,255,.16);padding:5px 12px;border-radius:99px;white-space:nowrap}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0 10px;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{flex:0 0 auto;border:0;background:rgba(255,255,255,.14);color:#fff;font:700 16px var(--txt);padding:9px 16px;border-radius:99px;cursor:pointer}
+nav.tabs button.on{background:#fff;color:var(--violet)}
+main{max-width:980px;margin:0 auto;padding:18px 14px 60px}
+.banner{background:var(--gold);color:#241a00;border-radius:16px;padding:12px 16px;margin-bottom:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-weight:700}
+.banner button{margin-left:auto}
+h2.pt{margin:6px 0 4px;font-size:28px}
+p.sub{margin:0 0 16px;color:var(--grey)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+@media (min-width:761px) and (max-width:980px){.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px 18px;margin-bottom:14px}
+.card h3{margin:0 0 10px;font-size:19px;display:flex;align-items:center;gap:9px}
+.dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:var(--c,var(--violet))}
+label.f{display:block;margin:8px 0 2px;font-weight:700;font-size:15px;color:var(--c,var(--violet))}
+input[type=text],input[type=date],input.num,textarea,select{width:100%;font:inherit;font-size:18px;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);padding:7px 2px;border-radius:0;outline:none}
+input:focus,textarea:focus,select:focus{border-bottom-color:var(--violet)}
+textarea{resize:vertical;min-height:84px;background:repeating-linear-gradient(transparent,transparent 33px,var(--line) 33px,var(--line) 35px);line-height:35px;border:0;padding:0 2px}
+select{border:2px solid var(--line);border-radius:12px;padding:8px 10px;background:var(--card)}
+.info .val{font-weight:700;font-size:19px;margin-top:2px}
+.row{display:flex;gap:10px;align-items:center}
+.row > *{min-width:0}
+.stars{display:inline-flex;gap:2px;flex:0 0 auto}
+.stars button{border:0;background:none;padding:2px;cursor:pointer;line-height:0;min-width:34px;min-height:34px;display:grid;place-items:center}
+.stars svg{width:26px;height:26px}
+.stars svg path{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linejoin:round}
+.stars button.on svg path{fill:var(--gold);stroke:var(--gold)}
+.badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 14px var(--num);background:var(--c,var(--violet));flex:0 0 auto}
+.btn{border:0;background:var(--violet);color:#fff;font:700 16px var(--txt);padding:11px 18px;border-radius:99px;cursor:pointer;min-height:44px}
+.btn.ghost{background:var(--soft);color:var(--violet)}
+.btn.small{padding:7px 14px;min-height:36px;font-size:15px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border:2px solid var(--border);background:var(--card);color:var(--ink);font:700 16px var(--num);min-width:48px;min-height:44px;border-radius:14px;cursor:pointer}
+.chip.on{background:var(--violet);border-color:var(--violet);color:#fff}
+.chip.filled:not(.on){border-color:var(--violet)}
+.subtabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.coups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.coups{grid-template-columns:1fr}}
+.coup{background:var(--soft);border-radius:14px;padding:6px 12px 10px}
+.coup input{font-size:17px}
+.rank-list{list-style:none;margin:0;padding:0}
+.rank-list li{display:flex;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid var(--border)}
+.rank-list li:nth-child(odd){background:var(--soft);border-radius:12px}
+.rank{width:36px;text-align:center;font-weight:700;font-size:18px;color:var(--grey)}
+.rank.top{color:var(--pink)}
+.rname{flex:1;font-weight:700;font-size:19px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.evo{font:700 14px var(--num);min-width:48px;text-align:center;border-radius:99px;padding:3px 6px}
+.evo.up{color:var(--green)} .evo.down{color:var(--coral)} .evo.eq{color:var(--grey)} .evo.new{color:var(--cyan)}
+.mv{border:0;background:var(--card);border:2px solid var(--border);color:var(--violet);width:42px;height:42px;border-radius:12px;font:700 18px var(--num);cursor:pointer}
+.mv:disabled{opacity:.3}
+.note10{width:58px!important;text-align:center;font-size:18px}
+.empty{color:var(--grey);font-style:italic;padding:12px 0}
+.slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+.slot{display:flex;align-items:center;gap:8px}
+.slot b{font-family:var(--num);color:var(--c,var(--violet));width:26px;font-size:16px}
+.mots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.mots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mots input{background:var(--soft);border:0;border-radius:12px;padding:10px;text-align:center}
+.yn{display:flex;gap:10px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.yn button{border:2px solid var(--border);background:var(--card);color:var(--ink);font:700 16px var(--txt);padding:7px 16px;border-radius:99px;cursor:pointer}
+.yn button.on{background:var(--green);border-color:var(--green);color:#fff}
+.yn button.on.no{background:var(--coral);border-color:var(--coral)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.cal,table.recap{border-collapse:collapse;width:100%;min-width:640px}
+table.cal th,table.recap th{background:var(--orange);color:#fff;text-align:left;padding:9px 8px;font:700 14px var(--num)}
+table.recap th{background:var(--violet);text-align:center}
+table.cal td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:middle}
+table.cal td:first-child{font:700 16px var(--num);color:var(--orange);text-align:center;width:40px}
+table.recap td{padding:9px 6px;border-bottom:1px solid var(--border);text-align:center;font-size:15px}
+table.recap td:first-child{text-align:left;font-weight:700}
+table.recap tr.out td{color:var(--grey)}
+.r1{color:var(--pink);font-weight:700} .r2{color:var(--violet);font-weight:700} .r3{color:var(--cyan);font-weight:700}
+.fiche .head{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:4px}
+.muted{color:var(--grey);font-size:15px}
+.backups li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.backups ul{list-style:none;padding:0;margin:0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;font-weight:700;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Mon carnet Star Academy</h1>
+    <span class="season">Saison 14 • 2026—2027</span>
+    <span class="status" id="status">Enregistré automatiquement ✓</span>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<main id="main"></main>
+<datalist id="acadList"></datalist>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+const NB_WEEKS = 13, NB_ACADS = 18, NB_CAL = 17;
+const LSKEY = "carnet-staracademy-2026";
+const PAL = ["--violet","--pink","--cyan","--orange","--coral","--green","--gold"];
+const col = i => `var(${PAL[i % PAL.length]})`;
+
+/* ---------- données ---------- */
+function blank(){
+  const arr = (n, f) => Array.from({length:n}, (_, i) => f(i));
+  const txt = () => "";
+  return {
+    saison:{nbAcad:"", nbPrimes:"", dateFinale:"", infos:""},
+    equipe:{profPrefere:"", notes:""},
+    acads: arr(NB_ACADS, i => ({id:"a"+(i+1), prenom:"", nom:"", age:"", ville:"", style:"", impression:"", stars:0})),
+    cal: arr(NB_CAL, i => ({date: i===0 ? "2026-10-10" : "", theme:"", invites:"", notes:""})),
+    weeks: arr(NB_WEEKS, () => ({
+      prime:{date:"", theme:"", coups: arr(12, () => ({cand:"", chanson:"", stars:0})), meilleure:"", prefere:"", invites:"", moment:""},
+      sem:{theme:"", top3:["","",""], nommes:"", favori:"", surprise:"", deception:"", fort:"", notes:""},
+      cl:{order:[], notes:{}, sortant:"", noteGlobale:""}
+    })),
+    avis: arr(4, () => ({date:"", apres:"", gagnant:"", finale:["",""], demi:["","","",""], tournee: arr(12, txt), pourquoi:""})),
+    demis: arr(2, () => ({date:"", c:[{nom:"", chansons:["","","",""], avis:"", stars:0},{nom:"", chansons:["","","",""], avis:"", stars:0}], gagnant:"", pourquoi:"", resultat:"", raison:""})),
+    finale:{date:"", f:[{nom:"", chansons:["","","",""], stars:0},{nom:"", chansons:["","","",""], stars:0}], envies: arr(8, txt), choix:"", vrai:"", raison:"", pense:""},
+    bilan:{mots: arr(10, txt), coeur:"", prestation:"", prime:"", gagnant:"", pense:"", note:""},
+    souvenirs:"",
+    meta:{updatedAt:0, lastFileBackup:0, lastWeeklySnap:""}
+  };
+}
+function merge(base, src){
+  if (Array.isArray(base)) {
+    if (!Array.isArray(src)) return base;
+    const out = base.map((b, i) => i < src.length ? merge(b, src[i]) : b);
+    if (typeof base[0] !== "object") for (let i = base.length; i < src.length; i++) out.push(src[i]);
+    return out;
+  }
+  if (base && typeof base === "object") {
+    if (!src || typeof src !== "object" || Array.isArray(src)) return base;
+    const out = {...base};
+    for (const k of Object.keys(src)) out[k] = (k in base) ? merge(base[k], src[k]) : src[k];
+    return out;
+  }
+  return (src === undefined || src === null) ? base : src;
+}
+let S = blank();
+try { const raw = localStorage.getItem(LSKEY); if (raw) S = merge(blank(), JSON.parse(raw)); } catch(e) {}
+
+function getP(path){ return path.split(".").reduce((o, k) => (o == null ? undefined : o[k]), S); }
+function setP(path, val){
+  const ks = path.split("."); let o = S;
+  for (let i = 0; i < ks.length - 1; i++) { if (o[ks[i]] == null) o[ks[i]] = /^\d+$/.test(ks[i+1]) ? [] : {}; o = o[ks[i]]; }
+  o[ks[ks.length-1]] = val;
+}
+
+/* ---------- sauvegarde ---------- */
+let db = null, uid = null, syncTimer = null, userCap = null, cloudOK = false;
+const statusEl = document.getElementById("status");
+function setStatus(t){ statusEl.textContent = t; }
+function persist(){
+  S.meta.updatedAt = Date.now();
+  try { localStorage.setItem(LSKEY, JSON.stringify(S)); } catch(e) {}
+  setStatus(db && uid ? "Enregistrement…" : "Enregistré sur cet appareil");
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncCloud, 1500);
+}
+function isoWeek(d){
+  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day);
+  const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+  const w = Math.ceil(((t - y0) / 86400000 + 1) / 7);
+  return t.getUTCFullYear() + "-S" + String(w).padStart(2, "0");
+}
+async function syncCloud(){
+  if (!db || !uid || !cloudOK) { setStatus("Enregistré automatiquement ✓"); return; }
+  try {
+    await db.doc(`data/users/${uid}/carnet`).set({updatedAt:S.meta.updatedAt, json:JSON.stringify(S)});
+    await weeklySnapshot();
+    setStatus("Enregistré ✓ (appareil + compte)");
+  } catch(e) {
+    setStatus("Enregistré automatiquement ✓");
+  }
+}
+async function weeklySnapshot(force){
+  if (!db || !uid) return false;
+  const wk = isoWeek(new Date());
+  if (!force && S.meta.lastWeeklySnap === wk) return false;
+  S.meta.lastWeeklySnap = wk;
+  try { localStorage.setItem(LSKEY, JSON.stringify(S)); } catch(e) {}
+  await db.doc(`data/users/${uid}/sauvegarde-${wk}`).set({savedAt:Date.now(), semaine:wk, json:JSON.stringify(S)});
+  // ne garder que les 10 dernières sauvegardes hebdomadaires
+  const snap = await db.collection(`data/users/${uid}`).get();
+  const olds = snap.docs.filter(d => d.id.startsWith("sauvegarde-")).map(d => d.id).sort();
+  for (const id of olds.slice(0, Math.max(0, olds.length - 10))) { try { await db.doc(`data/users/${uid}/${id}`).delete(); } catch(e) {} }
+  return true;
+}
+async function initCloud(){
+  if (!window.claude || !window.claude.use) return;
+  try {
+    const [d, u] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!d || !u) return;
+    const id = await u.id();
+    if (!id) return;
+    db = d; uid = id; userCap = u; cloudOK = true;
+    startGroup();
+    try {
+    const snap = await db.doc(`data/users/${uid}/carnet`).get();
+    if (snap.exists) {
+      const remote = snap.data();
+      if ((remote.updatedAt || 0) > (S.meta.updatedAt || 0)) {
+        S = merge(blank(), JSON.parse(remote.json));
+        try { localStorage.setItem(LSKEY, JSON.stringify(S)); } catch(e) {}
+        render();
+        toast("Carnet récupéré depuis ton compte");
+      } else if ((remote.updatedAt || 0) < (S.meta.updatedAt || 0)) {
+        await syncCloud();
+      }
+    } else if (S.meta.updatedAt) {
+      await syncCloud();
+    }
+    await weeklySnapshot();
+    setStatus("Enregistré ✓ (appareil + compte)");
+    if (tab === "save") render();
+    } catch(e) { cloudOK = false; setStatus("Enregistré automatiquement ✓"); if (tab === "save") render(); }
+  } catch(e) { db = null; uid = null; }
+}
+let downloads = null;
+
+/* ---------- helpers d'affichage ---------- */
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const inp = (p, ph = "", cls = "", list = false) => `<input type="text" class="${cls}" data-p="${p}" value="${esc(getP(p))}" placeholder="${esc(ph)}"${list ? ' list="acadList"' : ""} autocomplete="off">`;
+const numI = (p, ph = "", cls = "") => `<input type="text" inputmode="numeric" class="num ${cls}" data-p="${p}" value="${esc(getP(p))}" placeholder="${esc(ph)}" autocomplete="off">`;
+const dateI = p => `<input type="date" data-p="${p}" value="${esc(getP(p))}">`;
+const area = (p, rows = 3, ph = "") => `<textarea data-p="${p}" rows="${rows}" placeholder="${esc(ph)}">${esc(getP(p))}</textarea>`;
+const F = (lab, html, c) => `<label class="f"${c ? ` style="--c:${c}"` : ""}>${lab}</label>${html}`;
+const STAR = '<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>';
+const stars = p => { const v = +getP(p) || 0; let h = `<span class="stars" data-stars="${p}">`; for (let i = 1; i <= 5; i++) h += `<button type="button" data-star="${i}" class="${i <= v ? "on" : ""}" aria-label="${i} étoile${i>1?"s":""}">${STAR}</button>`; return h + "</span>"; };
+const card = (title, c, body) => `<section class="card" style="--c:${c}"><h3><span class="dot"></span>${title}</h3>${body}</section>`;
+const yn = p => { const v = getP(p); return `<div class="yn"><span class="muted">J’avais raison :</span><button type="button" data-yn="${p}" data-v="oui" class="${v==="oui"?"on":""}">oui</button><button type="button" data-yn="${p}" data-v="non" class="no ${v==="non"?"on":""}">non</button></div>`; };
+const slotsH = (p, n, c, list = true) => { let h = `<div class="slots" style="--c:${c}">`; for (let i = 0; i < n; i++) h += `<div class="slot"><b>${i+1}.</b>${inp(`${p}.${i}`, "", "", list)}</div>`; return h + "</div>"; };
+
+function acadName(a){ return [a.prenom, a.nom].filter(Boolean).join(" ").trim(); }
+function refreshList(){
+  document.getElementById("acadList").innerHTML = S.acads.filter(a => acadName(a)).map(a => `<option value="${esc(acadName(a))}">`).join("");
+}
+function eliminatedBefore(w){ // ids sortis avant la semaine w (index 0)
+  const out = new Set();
+  for (let i = 0; i < w; i++) { const s = S.weeks[i].cl.sortant; if (s) out.add(s); }
+  return out;
+}
+function activeAcads(w){ const el = eliminatedBefore(w); return S.acads.filter(a => acadName(a) && !el.has(a.id)); }
+function orderFor(w){
+  const act = activeAcads(w).map(a => a.id);
+  let base = S.weeks[w].cl.order.slice();
+  if (!base.length && w > 0) base = orderFor(w - 1);
+  const ord = base.filter(id => act.includes(id));
+  act.forEach(id => { if (!ord.includes(id)) ord.push(id); });
+  return ord;
+}
+const byId = id => S.acads.find(a => a.id === id);
+
+/* ---------- onglets ---------- */
+const TABS = [["saison","Ma saison"],["promo","Ma promo"],["cal","Calendrier"],["weeks","Primes & semaines"],["avis","Pronostics"],["demis","Demi-finales"],["finale","La finale"],["bilan","Bilan"],["souv","Souvenirs"],["recap","Récap"],["save","Sauvegardes"]];
+let tab = "weeks", wk = 0, sub = "prime", avisN = 0;
+try { const nav = JSON.parse(localStorage.getItem(LSKEY + "-nav") || "{}"); if (nav.tab) ({tab, wk = 0, sub = "prime", avisN = 0} = nav); } catch(e) {}
+if (!localStorage.getItem(LSKEY)) tab = "saison";
+function saveNav(){ try { localStorage.setItem(LSKEY + "-nav", JSON.stringify({tab, wk, sub, avisN})); } catch(e) {} }
+
+function renderTabs(){
+  document.getElementById("tabs").innerHTML = TABS.map(([k, l]) => `<button type="button" data-tab="${k}" class="${k===tab?"on":""}">${l}</button>`).join("");
+}
+
+const V = {};
+V.saison = () => {
+  const infos = [["Saison","14e saison"],["Lancement","Samedi 10 octobre 2026 • 21h10"],["Présentation","Nikos Aliagas • Karima Charni"],["Directeur","Mosimann"],["Parrain","Vianney"],["Âge des académiciens","18 à 26 ans"],["Récompense","100 000 € + contrats Sony"]];
+  const team = [["Chant","Sofia Morgavi"],["Danse","Jonathan Jenvrin"],["Théâtre","Papy"],["Expression scénique","Lydia Bouchard"],["Sport","Ladji Doucouré"],["Répétitrices","Fanny Delaigue • Philippine Lavrey"],["Grandes sœurs","Eva • Adèle Castillon"]];
+  return `<h2 class="pt">Ma saison</h2><p class="sub">Les infos clés à garder sous la main</p>
+  <div class="grid g3">${infos.map(([l,v],i)=>`<section class="card info" style="--c:${col(i)}"><h3><span class="dot"></span>${l}</h3><div class="val">${v}</div></section>`).join("")}
+  <section class="card" style="--c:var(--orange)"><h3><span class="dot"></span>Nombre d’académiciens</h3>${numI("saison.nbAcad","à compléter")}</section>
+  <section class="card" style="--c:var(--coral)"><h3><span class="dot"></span>Nombre de primes</h3>${numI("saison.nbPrimes","à compléter")}</section>
+  </div>
+  ${card("Date de la finale","var(--pink)", dateI("saison.dateFinale"))}
+  ${card("Mes informations à ajouter","var(--cyan)", area("saison.infos",4))}
+  <h2 class="pt" style="margin-top:22px">L’équipe du château</h2><p class="sub">Les visages de la saison 2026—2027</p>
+  <div class="grid g3">${team.map(([l,v],i)=>`<section class="card info" style="--c:${col(i+2)}"><h3><span class="dot"></span>${l}</h3><div class="val">${v}</div></section>`).join("")}
+  <section class="card" style="--c:var(--pink)"><h3><span class="dot"></span>Mon prof préféré</h3>${inp("equipe.profPrefere")}</section></div>
+  ${card("Mes notes sur l’équipe et les cours","var(--orange)", area("equipe.notes",4))}`;
+};
+V.promo = () => `<h2 class="pt">Ma promotion</h2><p class="sub">Une fiche par académicien. Les noms remplis ici apparaissent ensuite partout (classements, suggestions de saisie).</p>
+  <div class="grid g3">${S.acads.map((a,i)=>`<section class="card fiche" style="--c:${col(i)}">
+    <div class="head"><span class="badge">${String(i+1).padStart(2,"0")}</span>${stars(`acads.${i}.stars`)}</div>
+    ${F("Prénom", inp(`acads.${i}.prenom`), col(i))}${F("Nom", inp(`acads.${i}.nom`), col(i))}
+    <div class="row"><div style="flex:0 0 80px">${F("Âge", numI(`acads.${i}.age`), col(i))}</div><div style="flex:1">${F("Ville", inp(`acads.${i}.ville`), col(i))}</div></div>
+    ${F("Style", inp(`acads.${i}.style`), col(i))}${F("1re impression", area(`acads.${i}.impression`,2), col(i))}
+  </section>`).join("")}</div>`;
+V.cal = () => `<h2 class="pt">Calendrier des primes</h2><p class="sub">Mes dates • mes thèmes • mes repères</p>
+  <section class="card"><div class="table-wrap"><table class="cal"><thead><tr><th>N°</th><th>Date</th><th>Thème</th><th>Invités / artistes</th><th>Notes</th></tr></thead><tbody>
+  ${S.cal.map((r,i)=>`<tr><td>${i+1}</td><td style="width:150px">${dateI(`cal.${i}.date`)}</td><td>${inp(`cal.${i}.theme`)}</td><td>${inp(`cal.${i}.invites`)}</td><td>${inp(`cal.${i}.notes`)}</td></tr>`).join("")}
+  </tbody></table></div></section>`;
+
+function weekFilled(i){ const w = S.weeks[i]; return !!(w.prime.date || w.prime.theme || w.sem.theme || w.cl.order.length || w.prime.coups.some(c=>c.cand)); }
+V.weeks = () => {
+  const c = col(wk);
+  let h = `<div class="chips">${S.weeks.map((_,i)=>`<button type="button" class="chip ${i===wk?"on":""} ${weekFilled(i)?"filled":""}" data-wk="${i}">${i+1}</button>`).join("")}</div>
+  <div class="subtabs">${[["prime",`Prime ${wk+1}`],["sem",`Semaine ${wk+1}`],["cl","Classement"]].map(([k,l])=>`<button type="button" class="btn small ${k===sub?"":"ghost"}" data-sub="${k}">${l}</button>`).join("")}</div>`;
+  const b = `weeks.${wk}`;
+  if (sub === "prime") {
+    h += `<h2 class="pt">Prime ${wk+1}</h2>
+    <section class="card" style="--c:${c}"><div class="row"><div style="flex:0 0 190px">${F("Date", dateI(`${b}.prime.date`), c)}</div><div style="flex:1">${F("Thème", inp(`${b}.prime.theme`), c)}</div></div></section>
+    ${card("Mes prestations coup de cœur","var(--pink)", `<div class="coups">${S.weeks[wk].prime.coups.map((_,j)=>`<div class="coup">
+      <div class="row"><div style="flex:1">${F("Candidat", inp(`${b}.prime.coups.${j}.cand`,"","",true), c)}</div>${stars(`${b}.prime.coups.${j}.stars`)}</div>
+      ${F("Chanson", inp(`${b}.prime.coups.${j}.chanson`), c)}</div>`).join("")}</div>`)}
+    <div class="grid g2">
+      ${card("Mon débrief","var(--violet)", F("Meilleure prestation", inp(`${b}.prime.meilleure`,"","",true)) + F("Mon candidat préféré", inp(`${b}.prime.prefere`,"","",true)))}
+      ${card("Les artistes invités","var(--pink)", F("Invité(s) / tableau / surprise", area(`${b}.prime.invites`,2), "var(--pink)"))}
+    </div>
+    ${card("Le moment que je retiens","var(--cyan)", area(`${b}.prime.moment`,3))}`;
+  } else if (sub === "sem") {
+    h += `<h2 class="pt">Semaine ${wk+1}</h2><p class="sub">Évaluations • vie au château • progression</p>
+    <div class="grid g2">
+      ${card("Les évaluations","var(--pink)", F("Thème", inp(`${b}.sem.theme`), "var(--pink)") + `<label class="f" style="--c:var(--pink)">Mon top 3</label>` + [0,1,2].map(k=>`<div class="slot" style="--c:var(--pink)"><b>${k+1}.</b>${inp(`${b}.sem.top3.${k}`,"","",true)}</div>`).join("") + F("Les nommés pour moi", area(`${b}.sem.nommes`,2), "var(--pink)"))}
+      ${card("Ma semaine","var(--violet)", F("Mon favori", inp(`${b}.sem.favori`,"","",true)) + F("Ma surprise", inp(`${b}.sem.surprise`)) + F("Ma déception", inp(`${b}.sem.deception`)) + F("Le moment fort", area(`${b}.sem.fort`,2)))}
+    </div>
+    ${card("Vie au château • mes notes de la semaine","var(--cyan)", area(`${b}.sem.notes`,6))}`;
+  } else {
+    const ord = orderFor(wk), prev = wk > 0 ? orderFor(wk - 1) : null, cl = S.weeks[wk].cl;
+    const act = activeAcads(wk);
+    h += `<h2 class="pt">Classement — semaine ${wk+1}</h2><p class="sub">Mon top personnel. Monte ou descends chaque académicien avec les flèches ; l’évolution se calcule toute seule.</p>`;
+    if (!ord.length) h += `<section class="card"><p class="empty">Remplis d’abord les prénoms dans l’onglet « Ma promo » : ils apparaîtront ici.</p></section>`;
+    else {
+      h += `<section class="card" style="--c:${c}"><ul class="rank-list">${ord.map((id,i)=>{
+        const a = byId(id); let evo = "";
+        if (prev) { const p = prev.indexOf(id); if (p < 0) evo = `<span class="evo new">nouv.</span>`; else { const d = p - i; evo = d > 0 ? `<span class="evo up">▲ ${d}</span>` : d < 0 ? `<span class="evo down">▼ ${-d}</span>` : `<span class="evo eq">=</span>`; } }
+        return `<li><span class="rank ${i<3?"top":""}">${i+1}</span><span class="rname">${esc(acadName(a))}</span>${evo}
+          <input type="text" inputmode="decimal" class="num note10" data-p="weeks.${wk}.cl.notes.${id}" value="${esc(cl.notes[id]||"")}" placeholder="/10" aria-label="note sur 10">
+          <button type="button" class="mv" data-mv="${i}" data-d="-1" ${i===0?"disabled":""} aria-label="monter">↑</button><button type="button" class="mv" data-mv="${i}" data-d="1" ${i===ord.length-1?"disabled":""} aria-label="descendre">↓</button></li>`;
+      }).join("")}</ul></section>`;
+    }
+    h += `<div class="grid g2">
+      ${card("Sortant(e) cette semaine","var(--coral)", `<select data-sel="weeks.${wk}.cl.sortant"><option value="">— personne pour l’instant —</option>${act.map(a=>`<option value="${a.id}" ${cl.sortant===a.id?"selected":""}>${esc(acadName(a))}</option>`).join("")}</select><p class="muted">Il ou elle disparaîtra des classements suivants.</p>`)}
+      ${card("Ma note globale de la semaine","var(--violet)", `<div class="row">${numI(`weeks.${wk}.cl.noteGlobale`,"","")}<b class="num" style="font-size:20px;color:var(--violet)">/ 10</b></div>`)}
+    </div>`;
+  }
+  return h;
+};
+V.avis = () => {
+  const titles = ["Mon premier avis","Mon deuxième avis","Mon troisième avis","Mon quatrième avis"];
+  const b = `avis.${avisN}`;
+  return `<div class="subtabs">${titles.map((t,i)=>`<button type="button" class="btn small ${i===avisN?"":"ghost"}" data-avis="${i}">${t.replace("Mon ","").replace(" avis","")}</button>`).join("")}</div>
+  <h2 class="pt">${titles[avisN]}</h2><p class="sub">Mes pronostics à ce moment de la saison</p>
+  <section class="card"><div class="row"><div style="flex:0 0 190px">${F("Date du pronostic", dateI(`${b}.date`))}</div><div style="flex:1">${F("Après le prime n°", numI(`${b}.apres`))}</div></div></section>
+  ${card("Celui / celle que j’imagine gagner","var(--pink)", inp(`${b}.gagnant`,"","",true))}
+  ${card("Ceux que j’imagine en finale","var(--violet)", slotsH(`${b}.finale`,2,"var(--violet)"))}
+  ${card("Ceux que j’imagine en demi-finale","var(--cyan)", slotsH(`${b}.demi`,4,"var(--cyan)"))}
+  ${card("Ceux que j’imagine faire la tournée","var(--orange)", slotsH(`${b}.tournee`,12,"var(--orange)"))}
+  ${card(avisN===0 ? "Pourquoi ces choix ?" : "Ce qui a changé depuis mon dernier avis","var(--gold)", area(`${b}.pourquoi`,4))}`;
+};
+function candCard(p, c, title, withAvis){
+  return `<section class="card" style="--c:${c}"><h3><span class="dot"></span>${title}</h3>
+    ${F("Nom", inp(`${p}.nom`,"","",true), c)}
+    <label class="f" style="--c:${c}">Chansons / duos</label>${[0,1,2,3].map(j=>`<div class="slot" style="--c:${c}"><b>${j+1}.</b>${inp(`${p}.chansons.${j}`)}</div>`).join("")}
+    ${withAvis ? F("Mon avis sur ses prestations", area(`${p}.avis`,3), c) : ""}
+    <div class="row" style="margin-top:10px"><span class="muted">Ma note</span>${stars(`${p}.stars`)}</div></section>`;
+}
+V.demis = () => [0,1].map(n => `<h2 class="pt">Demi-finale ${n+1}</h2><p class="sub">${n===0?"Le grand soir":"Le dernier duel avant la finale"}</p>
+  <section class="card">${F("Date", dateI(`demis.${n}.date`))}</section>
+  <div class="grid g2">${candCard(`demis.${n}.c.0`,"var(--pink)","Candidat(e) A",true)}${candCard(`demis.${n}.c.1`,"var(--cyan)","Candidat(e) B",true)}</div>
+  ${card("Mon pronostic","var(--orange)", F("Le candidat que je vois gagner", inp(`demis.${n}.gagnant`,"","",true), "var(--orange)") + F("Pourquoi ?", area(`demis.${n}.pourquoi`,3), "var(--orange)") + F("Résultat réel", inp(`demis.${n}.resultat`,"","",true)) + yn(`demis.${n}.raison`))}`).join('<div style="height:20px"></div>');
+V.finale = () => `<h2 class="pt">La finale</h2><p class="sub">Le dernier prime • le dernier choix</p>
+  <section class="card">${F("Date", dateI("finale.date"))}</section>
+  <div class="grid g2">${candCard("finale.f.0","var(--pink)","Finaliste 1",false)}${candCard("finale.f.1","var(--violet)","Finaliste 2",false)}</div>
+  ${card("Les chansons que je veux entendre","var(--coral)", slotsH("finale.envies",8,"var(--coral)",false))}
+  ${card("Mon gagnant avant le résultat","var(--pink)", F("Mon choix", inp("finale.choix","","",true), "var(--pink)") + F("Le vrai gagnant", inp("finale.vrai","","",true)) + yn("finale.raison") + F("Ce que j’en pense", area("finale.pense",3), "var(--pink)"))}`;
+V.bilan = () => `<h2 class="pt">Bilan de fin de saison</h2><p class="sub">Mes souvenirs • mes coups de cœur • mon bilan</p>
+  ${card("Ma saison en 10 mots","var(--pink)", `<div class="mots">${S.bilan.mots.map((_,i)=>inp(`bilan.mots.${i}`, String(i+1))).join("")}</div>`)}
+  <div class="grid g2">
+  ${card("Mon coup de cœur de la saison","var(--pink)", inp("bilan.coeur","","",true))}
+  ${card("Le meilleur prime","var(--orange)", inp("bilan.prime"))}
+  </div>
+  ${card("La prestation que je n’oublierai pas","var(--cyan)", area("bilan.prestation",2))}
+  ${card("Mon avis sur le gagnant","var(--coral)", area("bilan.gagnant",2))}
+  ${card("Ce que j’ai pensé de la saison","var(--violet)", `<div class="row" style="justify-content:flex-end"><span class="muted">Ma note</span><div style="width:70px">${numI("bilan.note")}</div><b class="num" style="color:var(--violet)">/ 10</b></div>` + area("bilan.pense",5))}`;
+V.souv = () => `<h2 class="pt">Mes souvenirs</h2><p class="sub">Une dernière page pour tout ce que je veux garder</p>${card("Notes libres","var(--coral)", area("souvenirs",14))}`;
+V.recap = () => {
+  const acs = S.acads.filter(a => acadName(a));
+  if (!acs.length) return `<h2 class="pt">Récapitulatif</h2><section class="card"><p class="empty">Le tableau se remplira dès que tu auras saisi des prénoms dans « Ma promo » et fait tes premiers classements.</p></section>`;
+  const weeksDone = S.weeks.map((w,i)=>w.cl.order.length ? i : -1).filter(i=>i>=0);
+  const outWeek = {}; S.weeks.forEach((w,i)=>{ if (w.cl.sortant) outWeek[w.cl.sortant] = i+1; });
+  const rows = acs.map(a => {
+    const ranks = S.weeks.map((w,i) => { if (!w.cl.order.length) return null; const r = orderFor(i).indexOf(a.id); return r < 0 ? null : r + 1; });
+    const notes = S.weeks.map(w => parseFloat(String(w.cl.notes[a.id]||"").replace(",", "."))).filter(n => !isNaN(n));
+    const avg = notes.length ? (notes.reduce((s,n)=>s+n,0)/notes.length) : null;
+    const top3 = ranks.filter(r => r && r <= 3).length;
+    const coeurs = S.weeks.reduce((s,w)=>s + w.prime.coups.filter(c => c.cand.trim().toLowerCase() && [a.prenom, acadName(a)].map(x=>x.toLowerCase()).includes(c.cand.trim().toLowerCase())).length, 0);
+    return {a, ranks, avg, top3, coeurs};
+  });
+  const last = weeksDone.length ? weeksDone[weeksDone.length-1] : -1;
+  rows.sort((x,y) => { const rx = last>=0 ? x.ranks[last] : null, ry = last>=0 ? y.ranks[last] : null; if (rx && ry) return rx - ry; if (rx) return -1; if (ry) return 1; return 0; });
+  const cls = r => r===1?"r1":r===2?"r2":r===3?"r3":"";
+  return `<h2 class="pt">Récapitulatif de la saison</h2><p class="sub">Rangs semaine par semaine, moyenne de mes notes /10, nombre de fois dans mon top 3 et de coups de cœur en prime.</p>
+  <section class="card"><div class="table-wrap"><table class="recap"><thead><tr><th style="text-align:left">Académicien</th>${S.weeks.map((_,i)=>`<th>S${i+1}</th>`).join("")}<th>Moy.</th><th>Top 3</th><th>Cœurs</th><th>Sortie</th></tr></thead><tbody>
+  ${rows.map(r=>`<tr class="${outWeek[r.a.id]?"out":""}"><td>${esc(acadName(r.a))}</td>${r.ranks.map(x=>`<td class="${cls(x)}">${x||"·"}</td>`).join("")}<td>${r.avg==null?"·":r.avg.toFixed(1).replace(".",",")}</td><td>${r.top3||"·"}</td><td>${r.coeurs||"·"}</td><td>${outWeek[r.a.id]?"S"+outWeek[r.a.id]:"·"}</td></tr>`).join("")}
+  </tbody></table></div></section>`;
+};
+V.save = () => {
+  const cloud = cloudOK;
+  const last = S.meta.lastFileBackup ? new Date(S.meta.lastFileBackup).toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"}) : "jamais";
+  return `<h2 class="pt">Sauvegardes</h2><p class="sub">Ton carnet s’enregistre tout seul à chaque saisie.</p>
+  ${card("Enregistrement automatique","var(--green)", `<p>Sur cette tablette : <b>oui</b>, à chaque lettre tapée.</p><p class="muted">Tout reste dans ce navigateur, sur cet appareil. Ne vide pas les données du navigateur et n’utilise pas la navigation privée, sinon le carnet repart à zéro.</p>`)}
+  ${card("Sauvegarde de la semaine","var(--violet)", cloud
+    ? `<p>Une copie complète est gardée automatiquement chaque semaine (les 10 dernières semaines). Tu peux revenir à une ancienne version si tu effaces quelque chose par erreur.</p><div id="snaps" class="backups"><p class="muted">Chargement…</p></div><p><button type="button" class="btn ghost" data-act="snapnow">Faire une copie maintenant</button></p>`
+    : `<p>Télécharge un fichier de sauvegarde chaque semaine (bouton ci-dessous). Si tu changes d’appareil ou si le navigateur est vidé, « Restaurer un fichier » remet tout en place.</p>`)}
+  ${card("Fichier de sauvegarde","var(--orange)", `<p>Dernier fichier téléchargé : <b>${last}</b>. Un rappel s’affiche si ça fait plus de 7 jours.</p>
+    <div class="row" style="flex-wrap:wrap">${downloads ? `<button type="button" class="btn" data-act="export">Télécharger ma sauvegarde</button>` : ""}
+    <label class="btn ghost" style="display:inline-flex;align-items:center">Restaurer un fichier<input type="file" accept=".json,application/json" id="importFile" hidden></label></div>
+    ${downloads ? "" : `<p class="muted">Le téléchargement n’est pas disponible dans cette vue.</p>`}`)}`;
+};
+async function loadSnaps(){
+  const box = document.getElementById("snaps"); if (!box || !db || !uid) return;
+  try {
+    const snap = await db.collection(`data/users/${uid}`).get();
+    const list = snap.docs.filter(d => d.id.startsWith("sauvegarde-")).map(d => ({id:d.id, ...d.data()})).sort((a,b)=>b.savedAt-a.savedAt);
+    box.innerHTML = list.length ? `<ul>${list.map(s=>`<li><span class="num" style="flex:1">${esc(s.semaine||s.id)} — ${new Date(s.savedAt).toLocaleDateString("fr-FR",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span><button type="button" class="btn small ghost" data-restore="${esc(s.id)}">Revenir à cette version</button></li>`).join("")}</ul>` : `<p class="muted">Aucune copie pour l’instant.</p>`;
+  } catch(e) { box.innerHTML = `<p class="muted">Impossible de lire les copies pour le moment.</p>`; }
+}
+
+function banner(){
+  const days = S.meta.lastFileBackup ? (Date.now() - S.meta.lastFileBackup) / 86400000 : Infinity;
+  if (tab === "save" || !S.meta.updatedAt || days < 7 || !downloads) return "";
+  return `<div class="banner">📦 Pense à télécharger ta sauvegarde de la semaine.<button type="button" class="btn small" data-act="export">Sauvegarder</button></div>`;
+}
+function render(){
+  renderTabs(); refreshList();
+  const main = document.getElementById("main");
+  main.innerHTML = banner() + V[tab]();
+  if (tab === "save") loadSnaps();
+  saveNav();
+}
+
+/* ---------- interactions ---------- */
+const main = document.getElementById("main");
+main.addEventListener("input", e => {
+  const p = e.target.dataset.p; if (!p) return;
+  setP(p, e.target.value); persist();
+  if (/^acads\.\d+\.(prenom|nom)$/.test(p)) refreshList();
+});
+main.addEventListener("change", e => {
+  const sel = e.target.dataset.sel;
+  if (sel) { setP(sel, e.target.value); persist(); render(); }
+  if (e.target.id === "importFile" && e.target.files[0]) {
+    const r = new FileReader();
+    r.onload = () => {
+      try { const data = JSON.parse(r.result); if (!data || !data.weeks) throw 0;
+        if (!confirm("Remplacer le carnet actuel par cette sauvegarde ?")) return;
+        const keep = S.meta.lastFileBackup; S = merge(blank(), data); S.meta.lastFileBackup = keep; persist(); render(); toast("Sauvegarde restaurée");
+      } catch(err) { toast("Ce fichier n’est pas une sauvegarde du carnet"); }
+    };
+    r.readAsText(e.target.files[0]);
+  }
+});
+main.addEventListener("click", async e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.star) {
+    const box = t.closest("[data-stars]"), p = box.dataset.stars, v = +t.dataset.star;
+    setP(p, (+getP(p) === v) ? 0 : v); persist();
+    box.querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.star <= +getP(p)));
+    return;
+  }
+  if (t.dataset.yn) { const p = t.dataset.yn; setP(p, getP(p) === t.dataset.v ? "" : t.dataset.v); persist(); render(); return; }
+  if (t.dataset.wk) { wk = +t.dataset.wk; render(); window.scrollTo(0,0); return; }
+  if (t.dataset.sub) { sub = t.dataset.sub; render(); return; }
+  if (t.dataset.avis) { avisN = +t.dataset.avis; render(); return; }
+  if (t.dataset.mv) {
+    const i = +t.dataset.mv, d = +t.dataset.d, ord = orderFor(wk), j = i + d;
+    if (j < 0 || j >= ord.length) return;
+    [ord[i], ord[j]] = [ord[j], ord[i]];
+    S.weeks[wk].cl.order = ord; persist();
+    const y = t.getBoundingClientRect().top; render();
+    const nb = main.querySelector(`[data-mv="${j}"][data-d="${d}"]`) || main.querySelector(`[data-mv="${j}"]`);
+    if (nb) { window.scrollBy(0, nb.getBoundingClientRect().top - y); }
+    return;
+  }
+  if (t.dataset.act === "export") {
+    if (!downloads) return;
+    try {
+      const d = new Date(), stamp = d.toISOString().slice(0,10);
+      const res = await downloads.save({filename:`carnet-star-academy-${stamp}.json`, data:JSON.stringify(S, null, 1)});
+      if (res && res.status === "saved") { S.meta.lastFileBackup = Date.now(); persist(); render(); toast("Sauvegarde téléchargée"); }
+    } catch(err) { if (err && err.code === "unavailable") { downloads = null; render(); } }
+    return;
+  }
+  if (t.dataset.act === "snapnow") { try { await weeklySnapshot(true); toast("Copie enregistrée"); loadSnaps(); } catch(err) { toast("Copie impossible pour le moment"); } return; }
+  if (t.dataset.restore) {
+    if (!confirm("Revenir à cette version ? Ce que tu as saisi depuis sera remplacé.")) return;
+    try { const s = await db.doc(`data/users/${uid}/${t.dataset.restore}`).get();
+      if (s.exists) { const keep = S.meta; S = merge(blank(), JSON.parse(s.data().json)); S.meta.lastFileBackup = keep.lastFileBackup; S.meta.lastWeeklySnap = keep.lastWeeklySnap; persist(); render(); toast("Version restaurée"); }
+    } catch(err) { toast("Restauration impossible pour le moment"); }
+  }
+});
+document.getElementById("tabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-tab]"); if (!b) return;
+  tab = b.dataset.tab; render(); window.scrollTo(0,0);
+  b.scrollIntoView({inline:"center", block:"nearest"});
+});
+
+/* ---------- espace partagé « Entre copines » ---------- */
+const G = {on:false, owner:false, canWrite:null, pronos:{}, res:{weeks:{}, gagnant:"", finalistes:["",""]}, promo:[], mine:null, wk:0, err:""};
+let gTimer = null, gPending = false;
+const blankMine = () => ({pseudo:"", weeks:{}, gagnant:"", finalistes:["",""]});
+function typing(){ const a = document.activeElement; return a && main.contains(a) && (a.tagName === "INPUT" || a.tagName === "TEXTAREA"); }
+function gRender(){ if (tab !== "groupe") return; if (typing()) { gPending = true; return; } render(); }
+main.addEventListener("focusout", () => { if (!gPending) return; setTimeout(() => { if (!typing()) { gPending = false; gRender(); } }, 60); });
+async function startGroup(){
+  G.on = true;
+  try { G.owner = !!(await userCap.isOwner()); } catch(e) {}
+  try { G.canWrite = await userCap.can("data.write"); } catch(e) {}
+  db.collection("pronos").onSnapshot(s => {
+    const p = {}; s.docs.forEach(d => { p[d.id] = d.data(); }); G.pronos = p;
+    if (!G.mine) G.mine = merge(blankMine(), p[uid] ? JSON.parse(JSON.stringify(p[uid])) : {});
+    gRender();
+  }, () => {});
+  db.doc("shared/resultats").onSnapshot(s => { G.res = merge({weeks:{}, gagnant:"", finalistes:["",""]}, s.exists ? JSON.parse(JSON.stringify(s.data())) : {}); gRender(); }, () => {});
+  db.doc("shared/promo").onSnapshot(s => { G.promo = s.exists ? (s.data().noms || []).slice() : []; gRender(); }, () => {});
+  if (tab === "groupe") render();
+}
+function mine(){ if (!G.mine) G.mine = blankMine(); return G.mine; }
+function saveMine(){
+  clearTimeout(gTimer);
+  gTimer = setTimeout(async () => {
+    try { const m = mine(); m.updatedAt = Date.now(); await db.doc("pronos/" + uid).set(JSON.parse(JSON.stringify(m))); if (G.err) { G.err = ""; gRender(); } }
+    catch(e) { G.err = "Tes pronostics n’ont pas pu être enregistrés : ce carnet ne t’autorise pas encore à écrire."; G.canWrite = false; gRender(); }
+  }, 600);
+}
+async function saveRes(){ try { await db.doc("shared/resultats").set(JSON.parse(JSON.stringify(G.res))); } catch(e) { toast("Résultat non enregistré"); } }
+const weekLocked = w => !!G.res.weeks[String(w)];
+const seasonLocked = () => !!(G.res.gagnant || (G.res.finalistes || []).some(Boolean));
+function score(p){
+  let pts = 0, bons = 0; const r = G.res;
+  for (let w = 0; w < NB_WEEKS; w++) { const real = r.weeks[String(w)], pick = p.weeks && p.weeks[String(w)] && p.weeks[String(w)].sortant; if (real && pick && real === pick) { pts += 1; bons++; } }
+  if (r.gagnant && p.gagnant === r.gagnant) pts += 5;
+  const fin = (r.finalistes || []).filter(Boolean), mf = (p.finalistes || []).filter(Boolean);
+  mf.forEach((f, i) => { if (fin.includes(f) && mf.indexOf(f) === i) pts += 2; });
+  return {pts, bons};
+}
+function gSel(attr, val, locked){
+  const names = G.promo;
+  return `<select ${attr} ${locked || G.canWrite === false ? "disabled" : ""}><option value="">— choisir —</option>${names.map(n => `<option ${n === val ? "selected" : ""}>${esc(n)}</option>`).join("")}${val && !names.includes(val) ? `<option selected>${esc(val)}</option>` : ""}</select>`;
+}
+const pseudoOf = (id, p) => (p && p.pseudo) ? p.pseudo : "Sans pseudo";
+V.groupe = () => {
+  let h = `<h2 class="pt">Entre copines</h2><p class="sub">Vos pronostics partagés et le classement du groupe.</p>`;
+  if (!G.on) return h + card("Espace partagé indisponible", "var(--grey)", `<p>L’espace partagé ne fonctionne que dans l’appli en ligne, connectée à un compte Claude.</p>`);
+  if (G.canWrite === false) h += `<div class="banner" style="background:var(--soft);color:var(--ink)">Tu peux voir les pronostics du groupe mais pas encore participer : demande à la personne qui t’a partagé le carnet de t’inviter par e-mail comme éditrice.</div>`;
+  if (G.err) h += `<div class="banner">${esc(G.err)}</div>`;
+  const me = mine();
+  const all = Object.entries(G.pronos).filter(([id]) => id !== uid);
+  if (me.pseudo || Object.keys(me.weeks).length || me.gagnant) all.push([uid, me]);
+  // mon pseudo
+  h += card("Mon pseudo", "var(--pink)", `<input type="text" data-g="pseudo" value="${esc(me.pseudo)}" placeholder="Comment les autres te voient" ${G.canWrite === false ? "disabled" : ""} autocomplete="off">`);
+  if (!G.promo.length) h += `<section class="card"><p class="empty">${G.owner ? "Commence par enregistrer la liste des candidats en bas de page : elle servira à tout le groupe." : "La liste des candidats n’a pas encore été remplie par la personne qui a créé le carnet."}</p></section>`;
+  // classement du groupe
+  const board = all.map(([id, p]) => ({id, p, ...score(p)})).sort((a, b) => b.pts - a.pts);
+  h += card("Classement du groupe", "var(--violet)", board.length ? `<div class="table-wrap"><table class="recap" style="min-width:0"><thead><tr><th>#</th><th style="text-align:left">Pseudo</th><th>Points</th><th>Sorties trouvées</th></tr></thead><tbody>
+    ${board.map((b, i) => `<tr><td class="${i===0&&b.pts?"r1":""}">${i+1}</td><td>${esc(pseudoOf(b.id, b.p))}${b.id === uid ? " (moi)" : ""}</td><td><b>${b.pts}</b></td><td>${b.bons}</td></tr>`).join("")}</tbody></table></div>
+    <p class="muted">1 point par sortie trouvée • 2 points par finaliste trouvé • 5 points pour le gagnant. Les pronostics d’une semaine se ferment dès que le résultat est saisi.</p>` : `<p class="empty">Personne n’a encore joué.</p>`);
+  // semaine
+  const w = G.wk, k = String(w), lk = weekLocked(w), real = G.res.weeks[k] || "";
+  const mw = me.weeks[k] || {};
+  h += `<section class="card" style="--c:var(--cyan)"><h3><span class="dot"></span>Pronostics de la semaine</h3>
+    <div class="chips">${Array.from({length:NB_WEEKS}, (_, i) => `<button type="button" class="chip ${i===w?"on":""} ${weekLocked(i)?"filled":""}" data-gwk="${i}">${i+1}</button>`).join("")}</div>
+    ${lk ? `<p><b>Sorti(e) cette semaine : ${esc(real)}</b></p>` : `<p class="muted">Ouvert jusqu’à la saisie du résultat.</p>`}
+    <div class="grid g2"><div>${F("Qui va sortir ?", gSel(`data-g="w.${k}.sortant"`, mw.sortant || "", lk), "var(--coral)")}</div><div>${F("Mon favori de la semaine", gSel(`data-g="w.${k}.favori"`, mw.favori || "", lk), "var(--pink)")}</div></div>
+    ${all.filter(([id]) => id !== uid).length ? `<ul class="rank-list" style="margin-top:12px">${all.filter(([id]) => id !== uid).map(([id, p]) => { const pw = (p.weeks || {})[k] || {};
+      const txt = lk ? `sortie : <b>${esc(pw.sortant || "—")}</b> ${pw.sortant ? (pw.sortant === real ? "✓" : "✗") : ""} • favori : ${esc(pw.favori || "—")}` : (pw.sortant ? "a voté ✓" : "pas encore voté");
+      return `<li><span class="rname" style="flex:0 0 auto">${esc(pseudoOf(id, p))}</span><span style="flex:1;text-align:right">${txt}</span></li>`; }).join("")}</ul>` : ""}
+  </section>`;
+  // saison
+  const sl = seasonLocked();
+  h += `<section class="card" style="--c:var(--orange)"><h3><span class="dot"></span>Pronostics de saison</h3>
+    <div class="grid g3"><div>${F("Mon gagnant", gSel(`data-g="gagnant"`, me.gagnant, sl), "var(--pink)")}</div><div>${F("Finaliste 1", gSel(`data-g="fin.0"`, me.finalistes[0], sl), "var(--orange)")}</div><div>${F("Finaliste 2", gSel(`data-g="fin.1"`, me.finalistes[1], sl), "var(--orange)")}</div></div>
+    <p class="muted">${sl ? "Pronostics de saison fermés." : "Modifiables jusqu’à ce que les finalistes soient connus. Les choix des autres restent cachés jusque-là."}</p>
+    ${sl ? `<ul class="rank-list">${all.filter(([id]) => id !== uid).map(([id, p]) => `<li><span class="rname" style="flex:0 0 auto">${esc(pseudoOf(id, p))}</span><span style="flex:1;text-align:right">gagnant : <b>${esc(p.gagnant || "—")}</b> • finale : ${esc((p.finalistes || []).filter(Boolean).join(" / ") || "—")}</span></li>`).join("")}</ul>` : ""}
+  </section>`;
+  // résultats officiels (propriétaire)
+  if (G.owner) {
+    h += `<section class="card" style="--c:var(--green)"><h3><span class="dot"></span>Résultats officiels (visible par toi seule en modification)</h3>
+      ${F("Liste des candidats (un nom par ligne)", `<textarea id="gPromo" rows="6">${esc(G.promo.join("\n"))}</textarea>`, "var(--green)")}
+      <div class="row" style="flex-wrap:wrap;margin:10px 0"><button type="button" class="btn small" data-act="gpromo">Enregistrer la liste</button><button type="button" class="btn small ghost" data-act="gfill">Reprendre les prénoms de ma promo</button></div>
+      <div class="grid g2"><div>${F(`Sorti(e) semaine ${w+1}`, gSel(`data-r="w.${k}"`, real, false), "var(--coral)")}</div><div></div>
+      <div>${F("Finaliste 1 (réel)", gSel(`data-r="fin.0"`, G.res.finalistes[0], false), "var(--orange)")}</div><div>${F("Finaliste 2 (réel)", gSel(`data-r="fin.1"`, G.res.finalistes[1], false), "var(--orange)")}</div>
+      <div>${F("Gagnant(e) réel(le)", gSel(`data-r="gagnant"`, G.res.gagnant, false), "var(--pink)")}</div></div>
+    </section>`;
+  }
+  return h;
+};
+main.addEventListener("input", e => {
+  if (e.target.dataset.g === "pseudo") { mine().pseudo = e.target.value.slice(0, 30); saveMine(); }
+});
+main.addEventListener("change", e => {
+  const g = e.target.dataset.g, r = e.target.dataset.r, v = e.target.value;
+  if (g && g !== "pseudo") {
+    const m = mine();
+    if (g.startsWith("w.")) { const [, k, f] = g.split("."); m.weeks[k] = {...(m.weeks[k] || {}), [f]: v}; }
+    else if (g === "gagnant") m.gagnant = v;
+    else if (g.startsWith("fin.")) m.finalistes[+g.split(".")[1]] = v;
+    saveMine(); render();
+  }
+  if (r) {
+    if (r.startsWith("w.")) { const k = r.split(".")[1]; if (v) G.res.weeks[k] = v; else delete G.res.weeks[k]; }
+    else if (r === "gagnant") G.res.gagnant = v;
+    else if (r.startsWith("fin.")) G.res.finalistes[+r.split(".")[1]] = v;
+    saveRes(); render();
+  }
+});
+main.addEventListener("click", async e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.gwk) { G.wk = +t.dataset.gwk; render(); return; }
+  if (t.dataset.act === "gfill") { const ta = document.getElementById("gPromo"); if (ta) ta.value = S.acads.map(acadName).filter(Boolean).join("\n"); return; }
+  if (t.dataset.act === "gpromo") {
+    const ta = document.getElementById("gPromo"); if (!ta) return;
+    const noms = [...new Set(ta.value.split("\n").map(x => x.trim()).filter(Boolean))].slice(0, 40);
+    try { await db.doc("shared/promo").set({noms}); toast("Liste enregistrée"); } catch(err) { toast("Liste non enregistrée"); }
+  }
+});
+
+let tt; function toast(m){ const el = document.getElementById("toast"); el.textContent = m; el.classList.add("show"); clearTimeout(tt); tt = setTimeout(()=>el.classList.remove("show"), 2400); }
+
+downloads = { save: async ({filename, data}) => {
+  const blob = new Blob([data], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a"); a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  return {status:"saved"};
+}};
+render();
+
+})();
+</script>
+</body>
+</html>
